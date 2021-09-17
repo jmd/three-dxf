@@ -89,7 +89,9 @@ function onSuccess(evt){
     var loader = new THREE.FontLoader();
     loader.load( 'fonts/helvetiker_regular.typeface.json', function ( response ) {
         font = response;
-        cadCanvas = new window.ThreeDxf.Viewer(dxf, document.getElementById('cad-view'), 400, 400, font);
+        var width = document.body.clientWidth;
+        var height = document.body.clientHeight;
+        cadCanvas = new window.ThreeDxf.Viewer(dxf, document.getElementById('cad-view'), width, height, font);
     });
     
 }
